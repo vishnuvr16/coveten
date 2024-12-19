@@ -4,12 +4,27 @@ import IconEye from '@/components/icon/icon-eye';
 import IconPlus from '@/components/icon/icon-plus';
 import IconTrashLines from '@/components/icon/icon-trash-lines';
 import { sortBy } from 'lodash';
-import { DataTableSortStatus, DataTable } from 'mantine-datatable';
+import { DataTableSortStatus, DataTable, DataTableColumn } from 'mantine-datatable';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
+// Define interface for the invoice item
+interface InvoiceItem {
+    id: number;
+    invoice: string;
+    name: string;
+    email: string;
+    date: string;
+    amount: string;
+    status: {
+        tooltip: string;
+        color: string;
+    };
+    profile: string;
+}
+
 const ComponentsAppsInvoiceList = () => {
-    const [items, setItems] = useState([
+    const [items, setItems] = useState<InvoiceItem[]>([
         {
             id: 1,
             invoice: '081451',
@@ -135,13 +150,13 @@ const ComponentsAppsInvoiceList = () => {
     const [page, setPage] = useState(1);
     const PAGE_SIZES = [10, 20, 30, 50, 100];
     const [pageSize, setPageSize] = useState(PAGE_SIZES[0]);
-    const [initialRecords, setInitialRecords] = useState(sortBy(items, 'invoice'));
-    const [records, setRecords] = useState(initialRecords);
-    const [selectedRecords, setSelectedRecords] = useState<any>([]);
+    const [initialRecords, setInitialRecords] = useState<InvoiceItem[]>(sortBy(items, 'invoice'));
+    const [records, setRecords] = useState<InvoiceItem[]>(initialRecords);
+    const [selectedRecords, setSelectedRecords] = useState<InvoiceItem[]>([]);
 
     const [search, setSearch] = useState('');
-    const [sortStatus, setSortStatus] = useState<DataTableSortStatus>({
-        columnAccessor: 'firstName',
+    const [sortStatus, setSortStatus] = useState<DataTableSortStatus<InvoiceItem>>({
+        columnAccessor: 'invoice',
         direction: 'asc',
     });
 
@@ -168,15 +183,15 @@ const ComponentsAppsInvoiceList = () => {
                 );
             });
         });
-    }, [search]);
+    }, [search, items]);
 
     useEffect(() => {
         const data2 = sortBy(initialRecords, sortStatus.columnAccessor);
         setRecords(sortStatus.direction === 'desc' ? data2.reverse() : data2);
         setPage(1);
-    }, [sortStatus]);
+    }, [sortStatus, initialRecords]);
 
-    const deleteRow = (id: any = null) => {
+    const deleteRow = (id: number | null = null) => {
         if (window.confirm('Are you sure want to delete selected row ?')) {
             if (id) {
                 setRecords(items.filter((user) => user.id !== id));
@@ -185,11 +200,8 @@ const ComponentsAppsInvoiceList = () => {
                 setSelectedRecords([]);
                 setSearch('');
             } else {
-                let selectedRows = selectedRecords || [];
-                const ids = selectedRows.map((d: any) => {
-                    return d.id;
-                });
-                const result = items.filter((d) => !ids.includes(d.id as never));
+                const ids = selectedRecords.map((d) => d.id);
+                const result = items.filter((d) => !ids.includes(d.id));
                 setRecords(result);
                 setInitialRecords(result);
                 setItems(result);
@@ -199,6 +211,72 @@ const ComponentsAppsInvoiceList = () => {
             }
         }
     };
+
+    const handleSortStatusChange = (newSortStatus: DataTableSortStatus<InvoiceItem>) => {
+        setSortStatus(newSortStatus);
+    };
+
+    const columns: DataTableColumn<InvoiceItem>[] = [
+        {
+            accessor: 'invoice',
+            sortable: true,
+            render: ({ invoice }) => (
+                <Link href="/apps/invoice/preview">
+                    <div className="font-semibold text-primary underline hover:no-underline">{`#${invoice}`}</div>
+                </Link>
+            ),
+        },
+        {
+            accessor: 'name',
+            sortable: true,
+            render: ({ name, id }) => (
+                <div className="flex items-center font-semibold">
+                    <div className="w-max rounded-full bg-white-dark/30 p-0.5 ltr:mr-2 rtl:ml-2">
+                        <img className="h-8 w-8 rounded-full object-cover" src={`/assets/images/profile-${id}.jpeg`} alt="" />
+                    </div>
+                    <div>{name}</div>
+                </div>
+            ),
+        },
+        {
+            accessor: 'email',
+            sortable: true,
+        },
+        {
+            accessor: 'date',
+            sortable: true,
+        },
+        {
+            accessor: 'amount',
+            sortable: true,
+            titleClassName: 'text-right',
+            render: ({ amount }) => <div className="text-right font-semibold">{`$${amount}`}</div>,
+        },
+        {
+            accessor: 'status',
+            sortable: true,
+            render: ({ status }) => <span className={`badge badge-outline-${status.color}`}>{status.tooltip}</span>,
+        },
+        {
+            accessor: 'action',
+            title: 'Actions',
+            sortable: false,
+            textAlign: 'center',
+            render: ({ id }) => (
+                <div className="mx-auto flex w-max items-center gap-4">
+                    <Link href="/apps/invoice/edit" className="flex hover:text-info">
+                        <IconEdit className="h-4.5 w-4.5" />
+                    </Link>
+                    <Link href="/apps/invoice/preview" className="flex hover:text-primary">
+                        <IconEye />
+                    </Link>
+                    <button type="button" className="flex hover:text-danger" onClick={() => deleteRow(id)}>
+                        <IconTrashLines />
+                    </button>
+                </div>
+            ),
+        },
+    ];
 
     return (
         <div className="panel border-white-light px-0 dark:border-[#1b2e4b]">
@@ -223,67 +301,7 @@ const ComponentsAppsInvoiceList = () => {
                     <DataTable
                         className="table-hover whitespace-nowrap"
                         records={records}
-                        columns={[
-                            {
-                                accessor: 'invoice',
-                                sortable: true,
-                                render: ({ invoice }) => (
-                                    <Link href="/apps/invoice/preview">
-                                        <div className="font-semibold text-primary underline hover:no-underline">{`#${invoice}`}</div>
-                                    </Link>
-                                ),
-                            },
-                            {
-                                accessor: 'name',
-                                sortable: true,
-                                render: ({ name, id }) => (
-                                    <div className="flex items-center font-semibold">
-                                        <div className="w-max rounded-full bg-white-dark/30 p-0.5 ltr:mr-2 rtl:ml-2">
-                                            <img className="h-8 w-8 rounded-full object-cover" src={`/assets/images/profile-${id}.jpeg`} alt="" />
-                                        </div>
-                                        <div>{name}</div>
-                                    </div>
-                                ),
-                            },
-                            {
-                                accessor: 'email',
-                                sortable: true,
-                            },
-                            {
-                                accessor: 'date',
-                                sortable: true,
-                            },
-                            {
-                                accessor: 'amount',
-                                sortable: true,
-                                titleClassName: 'text-right',
-                                render: ({ amount, id }) => <div className="text-right font-semibold">{`$${amount}`}</div>,
-                            },
-                            {
-                                accessor: 'status',
-                                sortable: true,
-                                render: ({ status }) => <span className={`badge badge-outline-${status.color} `}>{status.tooltip}</span>,
-                            },
-                            {
-                                accessor: 'action',
-                                title: 'Actions',
-                                sortable: false,
-                                textAlignment: 'center',
-                                render: ({ id }) => (
-                                    <div className="mx-auto flex w-max items-center gap-4">
-                                        <Link href="/apps/invoice/edit" className="flex hover:text-info">
-                                            <IconEdit className="h-4.5 w-4.5" />
-                                        </Link>
-                                        <Link href="/apps/invoice/preview" className="flex hover:text-primary">
-                                            <IconEye />
-                                        </Link>
-                                        <button type="button" className="flex hover:text-danger" onClick={(e) => deleteRow(id)}>
-                                            <IconTrashLines />
-                                        </button>
-                                    </div>
-                                ),
-                            },
-                        ]}
+                        columns={columns}
                         highlightOnHover
                         totalRecords={initialRecords.length}
                         recordsPerPage={pageSize}
@@ -292,7 +310,7 @@ const ComponentsAppsInvoiceList = () => {
                         recordsPerPageOptions={PAGE_SIZES}
                         onRecordsPerPageChange={setPageSize}
                         sortStatus={sortStatus}
-                        onSortStatusChange={setSortStatus}
+                        onSortStatusChange={handleSortStatusChange}
                         selectedRecords={selectedRecords}
                         onSelectedRecordsChange={setSelectedRecords}
                         paginationText={({ from, to, totalRecords }) => `Showing  ${from} to ${to} of ${totalRecords} entries`}
