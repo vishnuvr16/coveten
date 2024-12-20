@@ -10,6 +10,10 @@
     },
     "dependencies": {
         "@emotion/react": "^11.10.6",
+        "@fullcalendar/daygrid": "^6.1.15",
+        "@fullcalendar/interaction": "^6.1.15",
+        "@fullcalendar/react": "^6.1.15",
+        "@fullcalendar/timegrid": "^6.1.15",
         "@headlessui/react": "^1.7.8",
         "@mantine/core": "^7.15.1",
         "@reduxjs/toolkit": "^1.9.1",
@@ -44,6 +48,7 @@
         "@tailwindcss/forms": "^0.5.3",
         "@tailwindcss/typography": "^0.5.8",
         "@types/lodash": "^4.14.191",
+        "@types/next": "^8.0.7",
         "@types/react-color": "^3.0.13",
         "@types/react-redux": "^7.1.32",
         "autoprefixer": "^10.4.17",
