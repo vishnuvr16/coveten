@@ -27,6 +27,7 @@ const QuotationPage = () => {
             client: 'Innovation Labs',
             serialNo: 2
         },
+        
         {
             id: 'QT-2024-003',
             userId: '100003',
@@ -100,7 +101,7 @@ const QuotationPage = () => {
     };
 
     return (
-        <div className="min-h-screen p-4">
+        <div className="min-h-screen p-3">
             <div className="rounded-xl p-8 shadow-xl panel">
                 {/* Header Section */}
                 <div className="mb-8">
@@ -158,7 +159,7 @@ const QuotationPage = () => {
 
                 {/* Table Section */}
                 <div className="overflow-x-auto rounded-lg">
-                    <table className="w-full table-auto border-collapse">
+                    <table className="w-full table-auto border-collapse ">
                         <thead>
                             <tr className="bg-gray-50">
                                 {[
