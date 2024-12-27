@@ -3,41 +3,44 @@ import React, { useState, useEffect } from 'react';
 import { Search, Plus, Eye, Trash2, Filter, Download, Calendar, ArrowUp, ArrowDown, MoreHorizontal, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
-interface InvoiceItem {
-    id: number;
-    invoice: string;
-    userid: string;
-    type: string;
-    expiryDate: string;
-    status: string
-}
-
-const ComponentsAppsInvoiceList = () => {
-    const [items, setItems] = useState<InvoiceItem[]>([
+const ComponentsAppsUsers = () => {
+    const [users] = useState([
         {
-            id: 1,
-            invoice: 'CIS/IN0027',
-            userid: '1000003',
-            type: 'SERVICE',
-            expiryDate: 'N/A',
-            status: 'cancelled',
+            userId: '100006',
+            email: "service@gmail.com",
+            userType: "SERVICE_PROVIDER",
+            connectivity: "OFFLINE",
+            status: "Approved",
         },
         {
-            id: 2,
-            invoice: 'CIS/IN0022',
-            userid: '1000003',
-            type: 'LEARN',
-            expiryDate: 'N/A',
-            status: 'N/A',
+            userId: '100006',
+            email: "service@gmail.com",
+            userType: "SERVICE_PROVIDER",
+            connectivity: "OFFLINE",
+            status: "Approved",
         },
         {
-            id: 3,
-            invoice: 'CIS/IN0020',
-            userid: '1000005',
-            type: 'LEARN',
-            expiryDate: 'N/A',
-            status: 'cancelled',
+            userId: '100006',
+            email: "service@gmail.com",
+            userType: "SERVICE_PROVIDER",
+            connectivity: "OFFLINE",
+            status: "Approved",
         },
+        {
+            userId: '100006',
+            email: "service@gmail.com",
+            userType: "SERVICE_PROVIDER",
+            connectivity: "OFFLINE",
+            status: "Approved",
+        },
+        {
+            userId: '100006',
+            email: "service@gmail.com",
+            userType: "SERVICE_PROVIDER",
+            connectivity: "OFFLINE",
+            status: "Approved",
+        },
+        
     ]);
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -57,13 +60,13 @@ const ComponentsAppsInvoiceList = () => {
         }
     };
 
-    const filteredQuotations = items
-        .filter(item => {
+    const filteredUsers = users
+        .filter(user => {
             const matchesSearch = 
-                item.invoice.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                item.userid.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                item.type.toLowerCase().includes(searchTerm.toLowerCase());
-            const matchesStatus = statusFilter === 'all' || item.type === statusFilter;
+                user.userId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                user.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                user.userType.toLowerCase().includes(searchTerm.toLowerCase());
+            const matchesStatus = statusFilter === 'all' || user.userType === statusFilter;
             return matchesSearch && matchesStatus;
         })
         .sort((a:any, b:any) => {
@@ -73,10 +76,10 @@ const ComponentsAppsInvoiceList = () => {
             return a[sortField] < b[sortField] ? 1 : -1;
         });
 
-    const totalPages = Math.ceil(filteredQuotations.length / itemsPerPage);
+    const totalPages = Math.ceil(filteredUsers.length / itemsPerPage);
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = filteredQuotations.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = filteredUsers.slice(indexOfFirstItem, indexOfLastItem);
 
     const getStatusColor = (status:any) => {
         switch (status) {
@@ -105,15 +108,15 @@ const ComponentsAppsInvoiceList = () => {
                 <div className="mb-8">
                     <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                         <div>
-                            <h1 className="text-3xl font-bold">Invoices List</h1>
+                            <h1 className="text-3xl font-bold">Users</h1>
                         </div>
                         <div className="flex flex-wrap items-center gap-4">
-                            <Link href="add" 
+                            <Link href="leads/create" 
                                 onClick={() => setIsCreateModalOpen(true)}
-                                className="group relative flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-2.5 text-white shadow-lg transition-all hover:from-blue-700 hover:to-blue-800 hover:shadow-blue-200 focus:outline-none"
+                                className="group relative flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-2.5 text-white shadow-lg transition-all hover:from-blue-700 hover:to-blue-800 hover:shadow-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                             >
                                 <Plus className="h-5 w-5" />
-                                <span className="font-medium">New Invoice</span>
+                                <span className="font-medium">Create User</span>
                                 <div className="absolute inset-0 rounded-lg bg-white opacity-0 transition-opacity group-hover:opacity-10"></div>
                             </Link>
                         </div>
@@ -126,7 +129,7 @@ const ComponentsAppsInvoiceList = () => {
                                 <input
                                     type="text"
                                     placeholder="Search by ID, name, or client..."
-                                    className="h-11 w-full rounded-lg pl-11 pr-4 text-sm transition-colors focus:border-blue-500 bg-[#1b2e4b] focus:outline-none focus:ring-2 focus:ring-blue-200"
+                                    className="h-11 w-full rounded-lg pl-11 pr-4 text-sm transition-colors  bg-[#1b2e4b] focus:outline-none focus:ring-2 "
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                 />
@@ -134,6 +137,17 @@ const ComponentsAppsInvoiceList = () => {
                             </div>
                         </div>
                         
+                        <div className="flex items-center gap-4">
+                            <select
+                                className="h-11 rounded-lg pl-4 pr-10 text-sm transition-colors bg-[#1b2e4b] focus:outline-none"
+                                value={statusFilter}
+                                onChange={(e) => setStatusFilter(e.target.value)}
+                            >
+                                <option value="all">All</option>
+                                <option value="service-provider">Service Provider</option>
+                                <option value="consumer">Consumer</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
@@ -143,12 +157,11 @@ const ComponentsAppsInvoiceList = () => {
                         <thead>
                             <tr className="bg-gray-50">
                                 {[
-                                    { field: 'serialNo', label: 'S.No' },
-                                    { field: 'invoiceId', label: 'Invoice Id' },
-                                    { field: 'userId', label: 'User Id' },
-                                    { field: 'type', label: 'Type' },
-                                    { field: 'expiryDate', label: 'Expiry Date' },
-                                    { field: 'payment_status', label: 'Payment Status' },
+                                    { field: 'userId', label: 'USER ID' },
+                                    { field: 'email', label: 'EMAIL' },
+                                    { field: 'user-type', label: 'USER TYPE' },
+                                    { field: 'connectivity', label: 'CONNECTIVITY' },
+                                    { field: 'status', label: 'STATUS' }
                                 ].map(({ field, label }) => (
                                     <th 
                                         key={field}
@@ -165,44 +178,31 @@ const ComponentsAppsInvoiceList = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {currentItems.map((item) => (
+                            {currentItems.map((user) => (
                                 <tr 
-                                    key={item.id} 
+                                    key={user.userId} 
                                     className="group border-t border-gray-200 transition-colors cursor-pointer"
                                 >
-                                    <td className="px-6 py-4 text-sm ">{item.id}</td>
+                                    <td className="px-6 py-4 text-sm ">{user.userId}</td>
                                     <td className="px-6 py-4">
-                                        <span className="font-medium">{item.invoice}</span>
+                                        <span className="font-medium">{user.email}</span>
                                     </td>
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-3">
-                                            <span className="text-sm ">{item.userid}</span>
+                                            <span className="text-sm ">{user.userType}</span>
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 text-sm">{item.type}</td>
+                                    <td className="px-6 py-4 text-sm">{user.connectivity}</td>
                                     <td className="px-6 py-4">
-                                        {item.expiryDate}
+                                        {user.status}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {item.status}
-                                    </td>
-                                    
-                                    <td className="px-6 py-4">
-                                        <div className="flex items-center gap-2 opacity-100 transition-opacity ">
-                                            <button 
-                                                className="rounded-lg p-1 text-gray-600 transition-colors  hover:text-blue-600 hover:shadow-lg"
-                                                title="View Details"
-                                            >
-                                                <Eye className="h-5 w-5" />
-                                            </button>
-                                            <button 
-                                                className="rounded-lg p-1 text-gray-600 transition-colors  hover:text-red-600 hover:shadow-lg"
-                                                title="Delete"
-                                            >
-                                                <Trash2 className="h-5 w-5" />
-                                            </button>
-                                            
-                                        </div>
+                                        <Link href="users/details" 
+                                            className="rounded-lg p-1 text-gray-600 transition-colors  hover:shadow-lg"
+                                            title="View Details"
+                                        >
+                                            <Eye className="h-5 w-5" />
+                                        </Link>
                                     </td>
                                 </tr>
                             ))}
@@ -213,7 +213,7 @@ const ComponentsAppsInvoiceList = () => {
                 {/* Pagination */}
                 <div className="mt-6 flex items-center justify-between">
                     <p className="text-sm text-gray-600">
-                        Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredQuotations.length)} of {filteredQuotations.length} entries
+                        Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredUsers.length)} of {filteredUsers.length} entries
                     </p>
                     <div className="flex items-center gap-2">
                         <button
@@ -250,4 +250,4 @@ const ComponentsAppsInvoiceList = () => {
     );
 };
 
-export default ComponentsAppsInvoiceList;
+export default ComponentsAppsUsers;
