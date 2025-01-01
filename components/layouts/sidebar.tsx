@@ -124,7 +124,7 @@ const Sidebar = () => {
                             <li className="nav-item">
                                 <ul>
                                     <li className="nav-item">
-                                        <Link href="/apps/mailbox" className="group">
+                                        <Link href="/apps/dashboard/mailbox" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuMailbox className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Internal Email')}</span>
@@ -132,7 +132,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/chat" className="group">
+                                        <Link href="/apps/dashboard/chat" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuChat className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Ongoing Chats')}</span>
@@ -179,7 +179,7 @@ const Sidebar = () => {
                                         </AnimateHeight>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/invoice/proforma" className="group">
+                                        <Link href="/apps/dashboard/invoice/proforma" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuInvoice className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Proforma Invoice')}</span>
@@ -187,7 +187,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/quotation" className="group">
+                                        <Link href="/apps/dashboard/quotation" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuChat className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Quotation')}</span>
@@ -195,7 +195,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/quotation/complaints" className="group">
+                                        <Link href="/apps/dashboard/quotation/complaints" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuChat className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Quotation Complaints')}</span>
@@ -203,7 +203,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/projects" className="group">
+                                        <Link href="/apps/dashboard/projects" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuDatatables className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Projects')}</span>
@@ -211,7 +211,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/tickets" className="group">
+                                        <Link href="/apps/dashboard/tickets" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuTodo className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('All Tickets')}</span>
@@ -229,7 +229,7 @@ const Sidebar = () => {
                             <li className='nav-item'>
                                 <ul>
                                      <li className="nav-item">
-                                        <Link href="/apps/leads" className="group">
+                                        <Link href="/apps/dashboard/leads" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Leads')}</span>
@@ -237,7 +237,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/users" className="group">
+                                        <Link href="/apps/dashboard/users" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuUsers className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('users')}</span>
@@ -245,7 +245,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/vendors" className="group">
+                                        <Link href="/apps/dashboard/vendors" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('vendors')}</span>
@@ -253,7 +253,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/roles" className="group">
+                                        <Link href="/apps/dashboard/roles" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('roles')}</span>
@@ -261,7 +261,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/support" className="group">
+                                        <Link href="/apps/dashboard/support" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('support')}</span>
@@ -279,7 +279,7 @@ const Sidebar = () => {
                             <li className='nav-item'>
                                 <ul>
                                      <li className="nav-item">
-                                        <Link href="/apps/products" className="group">
+                                        <Link href="/apps/dashboard/products" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Add Product')}</span>
@@ -287,7 +287,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/event" className="group">
+                                        <Link href="/apps/dashboard/event" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Add Events')}</span>
@@ -295,7 +295,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/addBenefits" className="group">
+                                        <Link href="/apps/dashboard/benefits" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Add Benefits')}</span>
@@ -313,7 +313,7 @@ const Sidebar = () => {
                             <li className='nav-item'>
                                 <ul>
                                      <li className="nav-item">
-                                        <Link href="/apps/homepage-video" className="group">
+                                        <Link href="/apps/dashboard/settings/homepage/video" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Homepage Video')}</span>
@@ -321,7 +321,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/homepage-capabilities" className="group">
+                                        <Link href="/apps/dashboard/settings/homepage/capabilities" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Homepage Capabilities')}</span>
@@ -329,7 +329,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/homepage-services" className="group">
+                                        <Link href="/apps/dashboard/settings/homepage/services" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Homepage Services')}</span>
@@ -337,7 +337,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/homepage-service-network" className="group">
+                                        <Link href="/apps/dashboard/settings/homepage/servicenetwork" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Homepage ServiceNetwork')}</span>
@@ -345,7 +345,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/homepage-whatwedo" className="group">
+                                        <Link href="/apps/dashboard/settings/homepage/whatwedo" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Homepage WhatWeDo')}</span>
@@ -353,7 +353,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/homepage-hero" className="group">
+                                        <Link href="/apps/dashboard/settings/homepage/hero" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Homepage Hero')}</span>
@@ -361,7 +361,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/homepage-clients" className="group">
+                                        <Link href="/apps/dashboard/settings/homepage/clients" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Homepage Clients')}</span>
@@ -369,7 +369,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/homepage-about-company" className="group">
+                                        <Link href="/apps/dashboard/settings/homepage/aboutcompany" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Homepage About Company')}</span>
@@ -377,7 +377,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/productpage-hero" className="group">
+                                        <Link href="/apps/dashboard/productpage/hero" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Productpage Hero')}</span>
@@ -385,7 +385,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/productpage-adds" className="group">
+                                        <Link href="/apps/dashboard/productpage/adds" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Productpage Ads')}</span>
@@ -393,7 +393,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/categories" className="group">
+                                        <Link href="/apps/dashboard/categories" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Categories')}</span>
@@ -401,7 +401,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/services" className="group">
+                                        <Link href="/apps/dashboard/services" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Services')}</span>
@@ -409,7 +409,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/solution" className="group">
+                                        <Link href="/apps/dashboard/solution" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Solution')}</span>
@@ -417,7 +417,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/industry" className="group">
+                                        <Link href="/apps/dashboard/industry" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Industry')}</span>
@@ -425,7 +425,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/features" className="group">
+                                        <Link href="/apps/dashboard/features" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Features')}</span>
@@ -433,7 +433,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/learnitems" className="group">
+                                        <Link href="/apps/dashboard/learnitems" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Learn Items')}</span>
@@ -441,7 +441,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/aboutus" className="group">
+                                        <Link href="/apps/dashboard/aboutus" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Aboutus Page')}</span>
@@ -449,7 +449,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/legalpage" className="group">
+                                        <Link href="/apps/dashboard/legalpage" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Legal Pages')}</span>
