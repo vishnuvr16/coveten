@@ -14,7 +14,7 @@ interface ValidationErrors {
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const ALLOWED_FILE_TYPES = ['image/jpeg', 'image/png', 'image/gif'];
 
-const IndustryDetails = () => {
+const TermDetailsPage = () => {
   const [details, setDetails] = useState<ProductAds>({
     image: null
   });
@@ -174,4 +174,4 @@ const IndustryDetails = () => {
   );
 };
 
-export default IndustryDetails;
+export default TermDetailsPage;

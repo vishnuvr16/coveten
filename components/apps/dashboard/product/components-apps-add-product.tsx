@@ -89,8 +89,8 @@ const ComponentsAppsProducts = () => {
 
 
   const renderProductListing = () => (
-    <div className="overflow-x-auto">
-      <table className="w-full text-white">
+    <div className="overflow-x-auto p-2 shadow-lg">
+      <table className="w-full">
         <thead className="bg-[#1b2e4b] border-b border-gray-600">
           <tr>
             <th className="p-4 text-left">S.No</th>
@@ -102,7 +102,7 @@ const ComponentsAppsProducts = () => {
         </thead>
         <tbody>
           {products.map((product, index) => (
-            <tr key={product.id} className="border-b border-gray-600 hover:bg-[#253655]">
+            <tr key={product.id} className="border-b border-gray-600 ">
               <td className="p-4">{index + 1}</td>
               <td className="p-4">{product.name}</td>
               <td className="p-4">${product.price}</td>
@@ -671,7 +671,7 @@ const ComponentsAppsProducts = () => {
   );
 
   return (
-    <div className="min-h-screen text-white p-8" style={{backgroundColor: themeConfig.backgroundColor}}>
+    <div className="min-h-screen  p-8" style={{backgroundColor: themeConfig.backgroundColor}}>
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-bold">Add New Products</h1>
