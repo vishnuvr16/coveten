@@ -329,7 +329,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/dashboard/settings/homepage/services" className="group">
+                                        <Link href="/apps/dashboard/settings/services" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Homepage Services')}</span>
@@ -337,7 +337,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/dashboard/settings/homepage/servicenetwork" className="group">
+                                        <Link href="/apps/dashboard/settings/homepage/services/network" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Homepage ServiceNetwork')}</span>
@@ -385,7 +385,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/dashboard/productpage/adds" className="group">
+                                        <Link href="/apps/dashboard/settings/productpage/ads" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Productpage Ads')}</span>
@@ -393,7 +393,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/dashboard/categories" className="group">
+                                        <Link href="/apps/dashboard/settings/categories" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Categories')}</span>
@@ -401,7 +401,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/dashboard/services" className="group">
+                                        <Link href="/apps/dashboard/settings/services" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Services')}</span>
@@ -441,7 +441,7 @@ const Sidebar = () => {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link href="/apps/dashboard/aboutus" className="group">
+                                        <Link href="/apps/dashboard/settings/aboutus" className="group">
                                             <div className="flex items-center">
                                                 <IconMenuCalendar className="shrink-0 group-hover:!text-primary" />
                                                 <span className="text-black ltr:pl-3 rtl:pr-3 dark:text-[#506690] dark:group-hover:text-white-dark">{t('Aboutus Page')}</span>

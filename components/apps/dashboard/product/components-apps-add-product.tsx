@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import { PlusCircle, Trash2, ArrowRight, Check } from 'lucide-react';
+import { useSelector } from 'react-redux';
+import { IRootState } from '@/store';
 
 interface Product {
   id: number;
@@ -38,6 +40,7 @@ const ComponentsAppsProducts = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [sideImages, setSideImages] = useState<string[]>(['']);
   const [brochures, setBrochures] = useState<string[]>(['']);
+  const themeConfig = useSelector((state:IRootState) => state.themeConfig)
   
   // Sample products data
   const [products, setProducts] = useState<Product[]>([
@@ -668,7 +671,7 @@ const ComponentsAppsProducts = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#0e1726] text-white p-8">
+    <div className="min-h-screen text-white p-8" style={{backgroundColor: themeConfig.backgroundColor}}>
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-bold">Add New Products</h1>

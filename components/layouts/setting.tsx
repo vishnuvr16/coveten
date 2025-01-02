@@ -67,7 +67,7 @@ const Setting = () => {
 
     // Expanded state for custom colors
     const [customColors, setCustomColors] = useState({
-        primary: themeConfig.primaryColor || '#4361ee',
+        primary: themeConfig.primaryColor || '#000',
         background: themeConfig.backgroundColor || '#ffffff',
         menuColor: themeConfig.menuColor || '#ffffff',
         headerColor: themeConfig.headerColor || '#ffffff',

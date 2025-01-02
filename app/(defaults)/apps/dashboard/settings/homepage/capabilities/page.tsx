@@ -1,4 +1,4 @@
-import HomepageCapabilities from '@/components/apps/dashboard/settings/homepage/HomepageCapabilities';
+import HomepageCapabilities from '@/components/apps/dashboard/settings/homepage/capabilities/HomepageCapabilities';
 import { Metadata } from 'next';
 import React from 'react';
 

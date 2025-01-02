@@ -3,6 +3,8 @@ import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useDropzone } from 'react-dropzone';
 import { Search, Play, Trash2, Upload, X } from 'lucide-react';
+import { useSelector } from 'react-redux';
+import { IRootState } from '@/store';
 
 interface Video {
   id: number;
@@ -26,6 +28,7 @@ const HomepageVideo: React.FC = () => {
   const [newVideoName, setNewVideoName] = useState<string>('');
   const [selectedFile, setSelectedFile] = useState<FileWithPreview | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const themeConfig = useSelector((state: IRootState) => state.themeConfig);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     if (acceptedFiles[0]) {
@@ -54,15 +57,14 @@ const HomepageVideo: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#0A0F1C] text-gray-100">
+    <div className="min-h-screen text-gray-100" style={{backgroundColor: themeConfig.backgroundColor}}>
       
-      <div className=" max-w-7xl">
+      <div className=" max-w-7xl p-3">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 mb-12">
           <div>
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-teal-400 to-blue-400 bg-clip-text text-transparent">
+            <h1 className="text-5xl font-bold  bg-clip-text text-transparent text-black" style={{color: themeConfig.primaryColor ? themeConfig.primaryColor : 'black'}}>
               Video Library
             </h1>
-            <p className="mt-2 text-gray-400">Manage your video content efficiently</p>
           </div>
           
           <div className="flex gap-4">
@@ -108,7 +110,7 @@ const HomepageVideo: React.FC = () => {
                   placeholder="Search videos..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 bg-gray-800/50 backdrop-blur-xl border border-gray-700 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all"
+                  className="w-full pl-12 pr-4 py-4 bg-gray-300 backdrop-blur-xl border border-gray-700 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all"
                 />
               </div>
 
@@ -143,8 +145,8 @@ const HomepageVideo: React.FC = () => {
                     
                     <div className="p-6 space-y-4">
                       <div className="space-y-2">
-                        <h3 className="text-xl font-semibold text-white line-clamp-1">{video.name}</h3>
-                        <p className="text-sm text-gray-400">
+                        <h3 className="text-xl font-semibold text-white line-clamp-1" style={{color: themeConfig.primaryColor ? themeConfig.primaryColor : 'gray-200'}}>{video.name}</h3>
+                        <p className="text-sm text-gray-400" style={{color: themeConfig.primaryColor ? themeConfig.primaryColor : 'white'}}>
                           Uploaded {video.uploadDate.toLocaleDateString()}
                         </p>
                       </div>
@@ -153,7 +155,7 @@ const HomepageVideo: React.FC = () => {
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="px-4 py-2 bg-purple-600/20 text-purple-400 rounded-lg hover:bg-purple-600/30 transition-colors"
+                          className="px-4 py-2 bg-purple-600/20 text-gray-200 rounded-lg hover:bg-purple-600/30 transition-colors"
                         >
                           Play Now
                         </motion.button>
@@ -181,7 +183,7 @@ const HomepageVideo: React.FC = () => {
               className="max-w-2xl mx-auto space-y-8"
             >
               <div className="space-y-4">
-                <label className="block text-lg font-medium text-gray-200">
+                <label className="block text-lg font-medium text-gray-200" style={{color: themeConfig.primaryColor ? themeConfig.primaryColor : 'black'}}>
                   Video Title
                 </label>
                 <input
@@ -194,7 +196,7 @@ const HomepageVideo: React.FC = () => {
               </div>
 
               <div className="space-y-4">
-                <label className="block text-lg font-medium text-gray-200">
+                <label className="block text-lg font-medium text-gray-200" style={{color: themeConfig.primaryColor ? themeConfig.primaryColor : 'black'}}>
                   Video File
                 </label>
                 <div 
@@ -214,7 +216,7 @@ const HomepageVideo: React.FC = () => {
                           <Play className="w-8 h-8 text-teal-400" />
                           <div>
                             <p className="text-white font-medium">{selectedFile.name}</p>
-                            <p className="text-sm text-gray-400">{formatFileSize(selectedFile.size)}</p>
+                            <p className="text-sm text-gray-400" style={{color: themeConfig.primaryColor ? themeConfig.primaryColor : 'gray-200'}}>{formatFileSize(selectedFile.size)}</p>
                           </div>
                         </div>
                         <button 
