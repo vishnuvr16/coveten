@@ -1,0 +1,129 @@
+.certificationsSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificationsTitle {
+    font-size: 64px;
+    font-weight: bold;
+    margin-bottom: 32px;
+    text-align: center;
+    width: 100%;
+}
+
+.certificationsListContainer {
+    width: 35%;
+    position: relative;
+  
+
+}
+
+.certificationsTimeline {
+    position: absolute;
+    left: 36px;
+    top: 45px;
+    width: 4px;
+    height: 100%;
+    background-color: #1b1b1b;
+    transform-origin: top;
+}
+
+.certificationsList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-left: 16px;
+}
+
+.certificationItem {
+    margin: 32px 0;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.certificationContent {
+    transform: translateY(50px);
+    transition: transform 0.5s ease-in-out;
+}
+
+.certificationTitle {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: black;
+}
+
+.certificationIssuer {
+    color: #B63E96;
+    text-transform: capitalize;
+}
+
+.certificationDate {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(27, 27, 27, 0.75);
+}
+
+.certificationDescription {
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+}
+
+
+
+@media (max-width: 640px) { 
+    .certificationTitle {
+        font-size: 14px;
+        margin-left: 36px;
+    }
+    .certificationContent {
+        transform: translateY(40px);
+        transition: transform 0.5s ease-in-out;
+    }
+    .certificationsList {
+        margin-left: 63px;
+    }
+    .certificationsListContainer {
+        width: 45%;
+        position: relative;       
+    }
+    .certificationItem {
+        margin: 16px 0;
+        width: 70%;
+    }
+}
+
+@media (max-width: 300px) { 
+    .certificationTitle {
+        font-size: 14px;
+        margin-left:72px;
+    }
+    .certificationContent {
+        transform: translateY(40px);
+        transition: transform 0.5s ease-in-out;
+    }
+    .certificationsListContainer {
+        width: 95%;
+        position: relative;       
+    }
+    .certificationsList {
+        margin-left: 10px;
+    }
+    .certificationItem {
+        margin: 16px 0;
+        width: 70%;
+    }
+
+  }
+
+
+
+

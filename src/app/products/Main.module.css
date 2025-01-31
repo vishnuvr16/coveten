@@ -1,0 +1,335 @@
+.Productsmain-Container{
+    /* background-image: url('../assets/backgroundImg.png'); 
+  background-size: cover; */
+  max-width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  
+}
+.Products-part1{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* .Products-part2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 16px;
+   margin-bottom: 2em;
+   margin-top: 2em;
+  } */
+  
+  /* .Products-part2 > :nth-child(n+6) {
+    grid-column: span 1;
+  } */
+
+.Product-Category-section{
+  display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 16px;
+}
+
+
+.Product-Category-section > :nth-child(n+6){
+  grid-column: span 1;
+}
+
+.Products-Ads-section{
+  padding: 1em;
+  width: 100%;
+  /* height: 500px; */
+  z-index: 5;
+}
+
+  .Products-part3{
+  margin-left: -1em; 
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+  }
+  .scroll-img{
+    width: 100%;
+  height: auto; 
+  object-fit: cover;
+    
+  }
+  .Products-part4 {
+    padding: 16px;
+  }
+
+  .ProductRow {
+    margin-bottom: 24px; /* Space between rows */
+  }
+  
+  .ProductRow h2 {
+    margin-bottom: 8px; /* Space between heading and horizontal line */
+  }
+  
+  .ProductRow hr {
+    width: 100%;
+    margin-bottom: 16px; 
+  }
+  
+  .ProductCardContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column; 
+  }
+  
+  .product-card {
+    flex: 1 1 calc(33.333% - 16px); 
+    margin: 8px;
+  }
+
+  /* .ProductCardContainerVertical {
+    display: flex;
+    flex-direction: column;
+  } */
+
+
+  .ProductCardContainerVertical {
+    display: flex;
+    flex-direction: column;
+    height: calc(400px * 2); /* Double the height to accommodate the duplicate set */
+  }
+
+  .VerticalCardContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    white-space: wrap;
+  }
+
+  /* .VerticalProductCardContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  } */
+
+  .VerticalProductCardContainer {
+    display: flex;
+    flex-direction: row;
+    height: 600px; /* Set a fixed height for the container */
+    overflow: hidden; /* Hide any overflowing content */
+    position: relative;
+    white-space: nowrap;
+    margin-bottom: 3em;
+  }
+  .ProductCardContainerHorizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+  .HorizontalProductCardContainer {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .ProductCardColumn {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .RowContainer {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    /* animation: scroll-horizontal 20s linear infinite;  */
+  }
+  .ProductCardRow {
+    display: flex;
+    /* margin-bottom: 1em; */
+    gap: 1em;
+  }
+
+  .ProductCardContainerHorizontal .ProductCard {
+    display: inline-block;
+    
+  }
+
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .Vedio-container{
+    width: 100%;
+    height: 100vh;
+    /* position: relative; */
+    /* margin-bottom: 3em; */
+    /* overflow: hidden; */
+  }
+
+
+
+  .Vedio-container-section{
+    width: 100%;
+    height: 100vh;
+    /* position: relative; */
+    /* overflow: hidden; */
+  }
+
+  .full-height-video {
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+  }
+
+  .typing-wrapper {
+    display: inline-block;
+    overflow: hidden; /* Hide the overflowing text */
+    white-space: nowrap; /* Ensure text stays in a single line */
+    border-right: 3px solid gray; /* Cursor effect */
+  }
+  
+  .typing {
+    /* Apply the typing animation when in view */
+    animation: typing 2s steps(22, end) 1s forwards, blink 0.75s step-end infinite;
+  }
+  
+  .typing-demo {
+    display: inline-block;
+    color: gray; /* Text color */
+    font-family: monospace;
+    /* font-size: 2.1rem;  */
+    font-size:1rem;
+    white-space: nowrap; /* Ensure text stays in a single line */
+
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      /* width: 79ch; */
+      width: 37ch;
+    }
+  }
+  
+  @keyframes blink {
+    0%,
+    100% {
+      border-color: gray;
+    }
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+
+
+
+  @media (max-width: 1280px) { 
+    .typing-demo {
+      display: inline-block;
+      color: gray; /* Text color */
+      font-family: monospace;
+      font-size: 2.1rem; 
+      white-space: nowrap; /* Ensure text stays in a single line */
+  
+    }
+    
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 78ch;
+        /* width: 34ch; */
+      }
+    }
+  }
+
+  
+
+
+
+
+
+  @media (max-width: 768px) {
+    .typing-demo {
+      font-size:1.5rem;
+    }
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        /* width: 79ch; */
+        width: 55ch;
+      }
+    }
+
+  }
+
+
+
+
+  @media (max-width: 640px) { 
+    .typing-demo {
+      display: inline-block;
+      color: gray; /* Text color */
+      font-family: monospace;
+      /* font-size: 2.1rem;  */
+      font-size:0.9rem;
+      white-space: nowrap; /* Ensure text stays in a single line */
+  
+    }
+    
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        /* width: 79ch; */
+        width: 34ch;
+      }
+    }
+  }
+
+
+
+
+
+
+  @media (max-width: 300px) { 
+    .typing-demo {
+      display: inline-block;
+      color: gray; /* Text color */
+      font-family: monospace;
+      /* font-size: 2.1rem;  */
+      font-size:0.7rem;
+      white-space: nowrap; /* Ensure text stays in a single line */
+  
+    }
+    
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        /* width: 79ch; */
+        width: 35ch;
+      }
+    }
+  }
+
+
+ 

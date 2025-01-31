@@ -3,6 +3,8 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/tailwind.css';
 import { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
+import Navbar from './Navbar';
+import Footer from "./Footer";
 
 export const metadata: Metadata = {
     title: {
@@ -21,7 +23,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className={nunito.variable}>
-                <ProviderComponent>{children}</ProviderComponent>
+                <ProviderComponent>
+                    <Navbar />
+                    {children}
+                    <Footer />
+                </ProviderComponent>
             </body>
         </html>
     );

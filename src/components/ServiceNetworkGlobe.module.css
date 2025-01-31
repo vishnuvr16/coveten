@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
+
+
+/* .tagcloud-container */
+.tagcloudContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  padding: 1em;
+}
+
+/* .tag-cloud styles */
+.tagCloud {
+ 
+  /* Add necessary styling for the tag cloud container */
+}
+
+/* .tag styles */
+.tag {
+  font-size: smaller;
+  color: #333;
+  font-weight: 500;
+  display: inline-block;
+  margin: 5px;
+}
+
+/* Heading with underline */
+.headingBlueunderline::after {
+  content: '';
+  position: absolute;
+  bottom: -9px; /* Adjust this value to position the underline */
+  left: 46%;
+  width: 100px; /* Adjust this width to control the length of the underline */
+  height: 4px; /* Adjust this height to control the thickness */
+  background-color: lightseagreen;
+  transform: translateX(-50%);
+}
+
+
+
+@media (max-width: 1280px) { 
+  .headingBlueunderline::after {
+    left: 50%;
+    transform: translateX(-105%);
+  }
+}
+
+@media (max-width: 768px) {
+  .headingBlueunderline::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+@media (max-width: 640px) {
+  .headingBlueunderline::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .tag {
+    font-size: x-small;
+    color: #333;
+    font-weight: 500;
+    display: inline-block;
+    margin: 5px;
+  }
+
+}
+
+
+
+@media (max-width: 300px) {
+  .headingBlueunderline::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .tag {
+    font-size: x-small;   
+  }
+  
+}
+

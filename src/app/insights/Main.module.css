@@ -1,0 +1,595 @@
+
+
+
+
+
+.InsightsmainContainer{
+    /* background-image: url('../assets/backgroundImg.png');  */
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.headingWithUnderline::after {
+  content: '';
+  position: absolute;
+  bottom: -9px; /* Adjust this value to position the underline */
+  left: 50%;
+  width: 100px; /* Adjust this width to control the length of the underline */
+  height: 4px; /* Adjust this height to control the thickness */
+  background-color: white; /* Tailwind's blue-600 color */
+  transform: translateX(-50%);
+}
+
+
+.headingwithblueunderline::after{
+  content: '';
+  position: absolute;
+  bottom: -9px; /* Adjust this value to position the underline */
+  left: 50%;
+  width: 100px; /* Adjust this width to control the length of the underline */
+  height: 4px; /* Adjust this height to control the thickness */
+  /* background-color: royalblue;  */
+  background-color: lightseagreen;
+  transform: translateX(-50%);
+}
+.neon-glow {
+  transition: 0.3s ease-in-out;
+}
+
+.neon-glow:hover {
+  text-shadow: 0 0 10px lightseagreen, 0 0 20px lightseagreen, 0 0 30px lightseagreen, 0 0 40px lightseagreen;
+  color: lightseagreen;
+}
+
+
+.headingWithBlackUnderline::after{
+  content: '';
+  position: absolute;
+  bottom: -9px; /* Adjust this value to position the underline */
+  left: 50%;
+  width: 100px; /* Adjust this width to control the length of the underline */
+  height: 4px; /* Adjust this height to control the thickness */
+  /* background-color: royalblue;  */
+  background-color: white;
+  transform: translateX(-50%);
+}
+
+.Insights-part1{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2em;
+    margin-bottom: 2em;
+    background-color: #B5C0D0;
+}
+
+
+.Insights-text-container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.coveten-club-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  text-align: justify;
+}
+.capabilities-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  text-align: justify;
+}
+.Left-logo{
+    width: 30%;
+}
+.coveten-logo{
+    width: 100%;
+}
+.Right-content{
+  width: 100%;
+  /* box-shadow: 0 2px 3px 0 rgba(148, 148, 148, 0.5); */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 1em;
+}
+.row2-content{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 85%;
+}
+.Insights-part3{
+  width: 100%;
+    height: 800px;
+    background-color: white;
+    padding: 2em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.Insigts-part2-heading,.Insights-part4-heading {
+  font-size: 2rem;
+    color: white;
+    padding: 2em;
+}
+
+.Insights-part5-heading{
+  font-size: 2rem;
+    color: #21618C;
+}
+.Insights-part6-heading{
+  font-size: 2rem;
+}
+.Insights-part8-heading{
+  font-size: 2rem;
+}
+
+.Insights-part4-heading{
+  margin-bottom: 0px !important;
+}
+
+.Insights-part3-heading{
+  font-size: 2rem;
+  padding: 2em;
+    color: black;
+}
+
+.Insights-part2{
+ width: 100%;
+ height: 900px;
+ background-color: #93B7BE;
+ padding: 2em;
+}
+.row1-img-container ,.row2-img-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-bottom: 4em;
+}
+ 
+.row1-img-container  h3 ,.row2-img-container h3{
+  color: white;
+}
+
+.row1-img-container img,.row2-img-container img{
+  border-radius: 16px;
+}
+.underline {
+    text-decoration: underline;
+  }
+.spinner{
+ width: 15em;
+ height: 15em;   
+}
+.spinner-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .spinner {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .mini-cards {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px; 
+    height: 150px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .mini-card {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+    line-height: 50px; /* Center text vertically */
+  }
+  
+  .top-left {
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  
+  .top-right {
+    position: absolute;
+    transform: translate(50%, -50%);
+  }
+  
+  .bottom {
+    position: absolute;
+    transform: translate(-50%, 50%);
+  }
+  
+  .top-left:nth-child(1) {
+    top: 20px; /* Adjust position */
+    left: -70px; /* Adjust position */
+  }
+  
+  .top-left:nth-child(2) {
+    top: 90px; /* Adjust position */
+    left: -90px;
+  }
+  
+  .top-left:nth-child(3) {
+    top: 150px; /* Adjust position */
+    right: 150px; /* Adjust position */
+  }
+  
+  .top-right:nth-child(4) {
+    top: 220px;
+    right: 70px; /* Adjust position */
+  }
+  
+  .top-right:nth-child(5) {
+    top: 150px; /* Adjust position */
+    left: 150px; 
+  }
+  
+  .top-right:nth-child(6) {
+    top: 80px; /* Adjust position */
+    left: 180px;
+  }
+  
+  .bottom:nth-child(7) {
+    top: -40px; /* Adjust position */
+    right: -110px; /* Adjust position */
+  }
+
+
+ 
+  
+  .card-container {
+    display: flex;
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 16px; /* Adds space between cards */
+    flex-wrap: wrap; /* Allows wrapping if needed */
+  }
+  
+  .Insightcard{
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .Insights-part4 {
+    width: 100%;
+ height: 900px;
+ background-color: #93B7BE;
+ padding: 2em;
+    background-color: #93B7BE;
+    padding: 2em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  
+  .underline {
+    text-decoration: underline;
+    font-weight: bold;
+    margin-bottom: 3.5em;
+    font-size: 2rem;
+  }
+  
+  
+  
+  .solution-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 150px; /* Adjust height as needed */
+    width: 100%; /* Ensures the card takes full width of the grid column */
+    box-sizing: border-box; /* Ensures padding is included in the element's width and height */
+  }
+  
+
+  .Insights-part5 {
+    /* text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2em;
+    height: 400px; */
+    /* background-color: #ffb703; */
+    width: 100%;
+    background-color: #E7FBE6;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .Insights-part5 .underline{
+    color:#ffb703;
+  }
+
+  .certification-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    padding: 2em;
+  }
+ 
+  /* .cards-container {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    gap: 0.5em; 
+    max-width: 1200px; 
+    margin: 2em auto;
+  } */
+  
+  .certification-card {
+    /* border: 1px solid #ddd;
+    border-radius: 30%; */
+    background-color: grey !important;
+    color: white;
+    border: 1px solid #ddd;
+    /* padding: 16px;
+    text-align: center;
+    width: 110px;
+    box-sizing: border-box;  */
+  }
+  
+
+
+  .Insights-part6 {
+    text-align: center;
+    padding: 2em;
+    background: #cdcfca; 
+    background: linear-gradient(#fafafa, #cdcfca);
+     /* background: #cdcfca;   */
+     /* background: linear-gradient(#fafafa, #cdcfca);  */
+  }
+  
+  .certification-cards-container,.supporting-cards-container{
+    display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap onto the next row */
+  justify-content: center; /* Centers cards horizontally */
+  gap: 0.5em; /* Space between cards */
+  max-width: calc(6 * 120px + 5 * 0.5em); /* Adjust max-width to fit exactly 6 cards */
+  margin: 2em auto;
+  }
+  
+  .supporting-card,.certification-card {
+    border: 1px solid #ddd;
+    background-color: white;
+    padding: 16px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    border-radius: 50px; /* Capsule shape */
+    box-sizing: border-box; /* Ensures padding is included in the element's width and height */
+  }
+  
+.supporting-card{
+  height: 90px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Insights-part7-heading{
+  color:white;
+  font-size: 2rem;
+}
+
+
+  .Insights-part7 {
+    text-align: center;
+    /* background-color: #513442; */
+    background-color: #0f0326;
+    padding: 2em;
+  }
+  
+  .awards-container {
+    display: flex;
+    justify-content: center; /* Centers cards horizontally */
+    gap: 1em; /* Space between cards */
+    max-width: 100%; /* Adjust based on your design */
+    margin: 2em auto; /* Centers the container horizontally */
+  }
+  
+  .award-card {
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Adjust for rounded corners */
+    background-color: white;
+    padding: 8px; /* Adjust padding as needed */
+    text-align: center;
+    width: 80px; /* Adjust width as needed */
+    box-sizing: border-box; /* Ensures padding is included in the element's width and height */
+  }
+  
+
+
+  .Insights-part8 {
+    background: #e2e1e0;
+    text-align: center;
+    padding: 2em;
+  }
+
+  
+  
+  .news-container {
+    display: flex;
+    justify-content: center; /* Centers cards horizontally */
+    gap: 1em; /* Space between cards */
+    flex-wrap: wrap; /* Allows cards to wrap if necessary */
+  }
+  
+  .news-card {
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners */
+    background-color: white;
+    padding: 16px; /* Adjust padding as needed */
+    text-align: left; /* Align text inside the card */
+    width: 250px; /* Adjust width as needed */
+    box-sizing: border-box; /* Ensures padding is included in the element's width and height */
+  }
+  
+  .news-title {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+  }
+  
+  .news-content {
+    color: #666; /* Text color */
+    line-height: 1.4; /* Line height for readability */
+  }
+  
+
+
+  .Insights-part9{
+    text-align: center;
+    margin-top: 2em;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 4em;
+  }
+  .Insights-row2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Insights-row-container{
+    height: 450px;
+    border: 1px solid black;
+    max-width: 1200px;
+    padding: 1em;
+  }
+
+.Insights-part9-row1{
+  display: flex;
+  justify-content: space-between; 
+  gap: 1em;
+}
+
+.benefit-card{
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Rounded corners */
+  background-color: white;
+  padding: 16px;
+  text-align: center; /* Center text inside the card */
+  width: 30%; /* Adjust width to fit 3 cards in a row */
+  box-sizing: border-box;
+}
+
+.Insights-part9-row2{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 1em;
+  padding: 1em;
+}
+
+.Insights-part9-row2 > .feature-card:nth-child(-n+5) {
+  flex: 1 1 calc(20% - 0.5em); /* 5 cards in one row */
+}
+
+.Insights-part9-row2 > .feature-card:nth-child(n+6) {
+  flex: 1 1 calc(20% - 0.5em); /* 4 cards in the next row */
+}
+.feature-card{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.Benefits-part1 {
+  margin: 2em auto; /* Center the container */
+  max-width: 1200px;
+  background-color: antiquewhite;
+  height: 30em;
+  padding: 1em;
+}
+
+.Benefits-row1 {
+  display: flex;
+  justify-content: space-between; /* Distribute cards with space between them */
+  gap: 1em; /* Space between cards */
+}
+
+.benefit-card {
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Rounded corners */
+  background-color: white;
+  padding: 16px;
+  text-align: center; /* Center text inside the card */
+  width: 30%; /* Adjust width to fit 3 cards in a row */
+  box-sizing: border-box; /* Ensure padding is included in width and height */
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.card-text {
+  color: #666; /* Text color */
+  line-height: 1.4; /* Line height for readability */
+}
+
+
+.benefits-row2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 1em;
+}
+
+.feature-card {
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  background-color: white;
+  padding: 16px;
+  text-align: center;
+  width: 100px;
+  height: 90px;
+  box-sizing: border-box;
+}
+
+
+

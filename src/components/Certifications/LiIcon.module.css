@@ -1,0 +1,45 @@
+.li-icon {
+    position: absolute;
+    left: 0;
+    stroke: #1b1b1b;
+}
+
+.li-icon-svg {
+    transform: rotate(-90deg);
+    margin-top: 9px;
+}
+
+.li-icon-circle {
+    stroke: #20B2AA; /* LightSeaGreen for stroke */
+    stroke-width: 1px;
+    fill: none;
+}
+
+.li-icon-motion-circle {
+    stroke-width: 5px;
+    fill: #f5f5f5;
+}
+
+.li-icon-pulse-circle {
+    animation: pulse 2s infinite;
+    stroke-width: 1px;
+    fill: #20B2AA; /* LightSeaGreen */
+}
+
+@keyframes pulse {
+    0% {
+        fill: #20B2AA; /* LightSeaGreen */
+    }
+    50% {
+        fill: #9bedd3; /* MediumAquamarine for a lighter green */
+    }
+    100% {
+        fill: #20B2AA; /* LightSeaGreen */
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,164 @@
+/* Main container styling */
+.maincontainer {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.Scrolling-Servicetext-container {
+  overflow: hidden;
+}
+
+/* Styling for service-text to appear as background text */
+.service-text {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 25rem;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+/* Styling for each "Services" text */
+.service-text span {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(149, 233, 229, 0.644);
+}
+
+.service-text span::after {
+  content: '.';
+  display: inline-block;
+  margin: 0 0.5rem;
+  font-size: 10rem;
+  color: rgba(149, 233, 229, 0.644);
+}
+
+/* Hide the last dot */
+.service-text span:last-child::after {
+  content: '';
+}
+
+/* Styling for the searchbox */
+.searchbox {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 30px 0;
+  font-size: large;
+  font-weight: 500;
+}
+
+/* Main service container */
+.service-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  padding: 1em;
+}
+
+/* Left container text styling */
+.left-container-text {
+  width: 450px;
+  position: sticky;
+  font-size: 1.7rem;
+  color: #F2F2F2;
+}
+
+/* Right service container styling */
+.right-service-container {
+  flex: 1;
+}
+
+
+@media (max-width: 1280px) { 
+  .maincontainer {
+    padding: 5rem;
+  }
+  .left-container-text {
+  margin-top: 4em;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .maincontainer {
+    padding: 1rem;
+  }
+  .left-container-text {
+    width: 350px;
+    position: sticky;
+    font-size: 1.5rem;
+    color: #F2F2F2;
+    margin-top: 4em;
+  }
+}
+
+
+
+@media (max-width: 640px) {
+  .maincontainer {
+    padding: 1rem;
+  }
+  .left-container-text {
+    width: 450px;
+    margin-top: 2em;
+  }
+  .service-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    width: 100%;
+  }
+  .right-service-container {
+    width: 100%;
+  }
+} 
+
+
+
+@media (max-width: 300px) {
+.maincontainer {
+  padding: 1rem;
+}
+.left-container-text{
+  width: 450px;
+  margin-top: 1em;
+}
+.right-service-container {
+  width: 100%;
+  font-size: smaller;
+}
+.service-text {
+ 
+  transform: translate(-80%, -10%);
+  font-size: 15rem;
+  gap: 5px;
+  overflow: hidden;
+}
+.service-text span::after {
+  content: '.';
+  display: inline-block;
+  margin: 5rem 0.5rem;
+  font-size: 10rem;
+  color: rgba(149, 233, 229, 0.644);
+}
+.service-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+  width: 100%;
+}
+} 
