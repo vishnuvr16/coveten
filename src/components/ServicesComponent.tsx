@@ -1,118 +1,121 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Check, Layers } from 'lucide-react';
+import React, { useState } from 'react';
+import { Settings2, ChevronDown, ChevronRight } from 'lucide-react';
 
-interface ServiceCategory {
-  title: string;
-  services: string[];
-}
+const ServicesComponent = () => {
+  const [activeId, setActiveId] = useState(null);
 
-interface ServicesComponentProps {
-  data: {
-    heading: string;
-    description: string;
-    hasServicecategory?: ServiceCategory[];
+  const servicesData = {
+    heading: "Our Services",
+    description: "Comprehensive service offerings",
+    categories: [
+      {
+        id: 1,
+        title: "Non Destructive Services",
+        services: ["LINAC", "Nano and MicroCT Analysis", "Ultrasonic Testing (UT)", "Radiographic Testing (RT)", "Magnetic Particle Testing (MT)", "Dye Penetrant Testing (PT)", "Eddy Current Testing (ET)", "Visual Inspection", "Thermography"]
+      },
+      {
+        id: 2,
+        title: "Design Engineering Services",
+        services: ["3D Scanning", "CAD/CAM Designing", "Reverse Engineering", "Simulation and Analysis services"]
+      },
+      {
+        id: 3,
+        title: "Manufacturing Services",
+        services: ["E2E Manufacturing & Projects", "Subassemblies & Components", "Machining work", "Storage and Fabrication services"]
+      },
+      {
+        id: 4,
+        title: "Functional Services",
+        services: ["Virtual / Mechanical Simulation", "Digital Simulation", "Reliability", "Fire and Safety", "Environmental Testings"]
+      },
+      {
+        id: 5,
+        title: "Materials Engineering Services",
+        services: ["Mechanical Testing", "Thermal Testing", "Electrical Testing", "Chemical Testing", "Optical & Spectral services", "Acoustic Testing"]
+      },
+      {
+        id: 6,
+        title: "Rapid Prototype Services",
+        services: ["3D Printing", "Injection Molding", "Clay or Wax Modeling", "CNC Machining", "Rapid Casting", "Laser Cutting", "Vacuum Forming", "Sheet Metal Prototyping", "Composite Layup", "Water Jet Cutting"]
+      }
+    ]
   };
-}
 
-const ServicesComponent: React.FC<ServicesComponentProps> = ({ data }) => {
-  const [openSection, setOpenSection] = useState<number | null>(null); // Store index instead of title
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const handleToggle = (index: number) => {
-    setOpenSection((prevIndex) => (prevIndex === index ? null : index));
+  const handleToggle = (id:any) => {
+    setActiveId(activeId === id ? null : id);
   };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-      setOpenSection(null);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   return (
-    <div
-      className="bg-gradient-to-br from-[#0F172A] to-[#1E293B] py-16 px-4 overflow-hidden"
-      ref={containerRef}
-    >
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
-            {data?.heading}
-          </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
-            {data?.description}
-          </p>
-        </motion.div>
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <div className="max-w-7xl mx-auto px-4 pt-16">
+        {/* Header Section */}
+        <div className="text-center mb-20 relative z-10">
+          <div className="space-y-6">
+            <Settings2 className="w-16 h-16 mx-auto text-blue-500 animate-spin-slow" />
+            <h2 className="text-5xl font-bold text-white bg-clip-text">
+              {servicesData.heading}
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              {servicesData.description}
+            </p>
+          </div>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {data?.hasServicecategory?.map((category, index) => (
-            <motion.div
-              key={index} // Use index as the key
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: index * 0.2 }}
-              className="bg-slate-800/60 rounded-3xl overflow-hidden backdrop-blur-sm border border-slate-700/50 shadow-2xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300"
+        {/* Services Grid */}
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 pb-24">
+          {servicesData.categories.map((category) => (
+            <div
+              key={category.id}
+              className="relative group"
             >
-              {/* Section Header */}
-              <div
-                onClick={() => handleToggle(index)} // Use index for toggling
-                className="flex justify-between items-center p-4 cursor-pointer hover:bg-slate-700/50 transition-colors group"
-              >
-                <div className="flex items-center space-x-4">
-                  <div className="bg-blue-500/20 p-3 rounded-xl">
-                    <Layers className="w-6 h-6 text-blue-400 group-hover:rotate-6 transition-transform" />
+              {/* Hover Border Effect */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              {/* Main Content Container */}
+              <div className="relative bg-slate-900 rounded-xl border border-slate-800 overflow-visible z-10">
+                {/* Category Header */}
+                <button
+                  onClick={() => handleToggle(category.id)}
+                  className="w-full flex items-start justify-between p-6 cursor-pointer hover:bg-slate-800/50 transition-colors"
+                >
+                  <div className="text-left">
+                    <h3 className="text-xl font-semibold text-white mb-2">
+                      {category.title}
+                    </h3>
+                    <p className="text-sm text-gray-400">
+                      {category.services.length} Services Available
+                    </p>
                   </div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                    {category.title}
-                  </h3>
-                </div>
-                <ChevronDown
-                  className={`w-7 h-7 text-gray-400 transition-all ${
-                    openSection === index
-                      ? 'rotate-180 text-blue-400'
-                      : 'group-hover:text-blue-300'
-                  }`}
-                />
-              </div>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-blue-400 transition-transform duration-300 ${
+                      activeId === category.id ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
 
-              {/* Section Content */}
-              <AnimatePresence>
-                {openSection === index && (
-                  <motion.div
-                    key="content"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-6 pb-6"
-                  >
-                    <div className="grid md:grid-cols-1 gap-4 w-full">
-                      {category.services.map((service, serviceIndex) => (
-                        <div
-                          key={serviceIndex}
-                          className="flex items-center text-sm text-gray-300 hover:text-white transition-colors"
-                        >
-                          <Check className="w-5 h-5 mr-3 text-blue-500 flex-shrink-0" />
-                          <span className="truncate">{service}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
+                {/* Services List */}
+                <div 
+                  className={`transition-all duration-300 ease-in-out ${
+                    activeId === category.id ? 'block' : 'hidden'
+                  }`}
+                >
+                  <div className="p-6 space-y-3 border-t border-slate-800">
+                    {category.services.map((service, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center group/item hover:bg-slate-800/50 p-2 rounded-lg transition-colors"
+                      >
+                        <ChevronRight className="w-4 h-4 text-blue-500 mr-2" />
+                        <span className="text-gray-300 text-sm group-hover/item:text-white transition-colors">
+                          {service}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

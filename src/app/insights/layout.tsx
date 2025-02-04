@@ -1,6 +1,7 @@
 
 import Leads from '@/src/components/Leads';
 import React from 'react';
+import Navbar from '../Navbar';
 
 export default function RootLayout({
     children,
@@ -9,6 +10,7 @@ export default function RootLayout({
 }) {
     return (
         <>
+            <Navbar />
             {children}
             <Leads/>
         </>

@@ -11,50 +11,13 @@ import ServicesComponent from "@/src/components/ServicesComponent";
 import ServiceNetworkGlobe from "@/src/components/ServiceNetworkGlobe";
 import Procurement from "@/src/components/Procurement";
 import CardSlider from "@/src/components/CardSlider";
+import Navbar from "./Navbar";
 
 // Sample Data
 const videoData = [
   { id: "1", video: "/sample-video-1.mp4" },
   { id: "2", video: "/sample-video-2.mp4" }
 ];
-
-const capabilitiesData = {
-  title: "Our Core Capabilities",
-  subtitle: "Innovative solutions across industries",
-  capabilities: [
-    {
-      id: "c1",
-      title: "Manufacturing",
-      description: "Advanced manufacturing techniques",
-      icon: <svg>...</svg>, // You'll need to add an appropriate icon
-      color: "#4361ee" // Add a color
-    },
-    {
-      id: "c2", 
-      title: "Engineering",
-      description: "Precision engineering solutions",
-      icon: <svg>...</svg>, // You'll need to add an appropriate icon
-      color: "#00ab55" // Add a color
-    }
-  ]
-};
-const servicesData = {
-  id: "1",
-  heading: "Our Services",
-  description: "Comprehensive service offerings",
-  hasServicecategory: [
-    {
-      id: "sc1",
-      title: "Technical Services",
-      services: ["Consulting", "Design Support"]
-    },
-    {
-      id: "sc2", 
-      title: "Manufacturing Services",
-      services: ["Production", "Quality Control"]
-    }
-  ]
-};
 
 const serviceNetworkData = {
   id: "1",
@@ -134,15 +97,16 @@ export default async function Home() {
   return (
     <>
       <section className="w-full flex flex-col items-center">
+        <Navbar />
         <Hero videoData={videoData} />
-        <div className="p-[3em] md:p-[4em] relative flex flex-col items-center w-full bg-white overflow-hidden" style={styles.capabilitiesSection}>      
+        <div className="relative flex flex-col items-center w-full" style={styles.capabilitiesSection}>      
           <div style={styles.particles}>
             <ParticlesComponent id="particles" />
           </div>
           <Capabilities />        
         </div>
         <div className="w-full " style={styles.serviceSection}>
-          <ServicesComponent data={servicesData}/>
+          <ServicesComponent />
         </div>
         <div className="w-full p-20 overflow-hidden flex items-center flex-col" style={styles.serviceNetworkSection}>
             <ServiceNetworkGlobe />
