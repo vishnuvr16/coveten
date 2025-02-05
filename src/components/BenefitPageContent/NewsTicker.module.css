@@ -1,0 +1,62 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap');
+
+.newsContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsContent span {
+  height: 3rem; /* Set a specific height for each news item */
+}
+
+/* Adjust keyframes to work with dynamic content */
+@keyframes slide {
+  0% { margin-top: -9rem; }    /* Start at the last item (assuming 3 items, -3rem each) */
+  5% { margin-top: -6rem; }    /* Quickly move to the second item */
+  35% { margin-top: -6rem; }   /* Pause at the second item */
+  40% { margin-top: -3rem; }   /* Move to the first item */
+  65% { margin-top: -3rem; }   /* Pause at the first item */
+  70% { margin-top: 0; }       /* Move to the top (no movement) */
+  99.99% { margin-top: 0; }    /* Keep it at the top */
+  100% { margin-top: 0; }      /* End at the top */
+}
+
+.animateSlide {
+  animation: slide 18s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .newsContent span {
+    height: 2.5rem; /* Adjusted height */
+  }
+
+  @keyframes slide {
+    0% { margin-top: -7.5rem; } /* 3 items x 2.5rem each */
+    5% { margin-top: -5rem; }   /* Move to the second item */
+    35% { margin-top: -5rem; }  /* Pause at the second item */
+    40% { margin-top: -2.5rem; }/* Move to the first item */
+    65% { margin-top: -2.5rem; }/* Pause at the first item */
+    70% { margin-top: 0; }      /* Move to the top */
+    99.99% { margin-top: 0; }   /* Keep at the top */
+    100% { margin-top: 0; }     /* End at the top */
+  }
+}
+
+/* Media Query for Extra Small Screens (300px) */
+@media (max-width: 300px) {
+  .newsContent span {
+    height: 2rem; /* Smaller height */
+  }
+
+  @keyframes slide {
+    0% { margin-top: -6rem; }   /* 3 items x 2rem each */
+    5% { margin-top: -4rem; }   /* Move to the second item */
+    35% { margin-top: -4rem; }  /* Pause at the second item */
+    40% { margin-top: -2rem; }  /* Move to the first item */
+    65% { margin-top: -2rem; }  /* Pause at the first item */
+    70% { margin-top: 0; }      /* Move to the top */
+    99.99% { margin-top: 0; }   /* Keep at the top */
+    100% { margin-top: 0; }     /* End at the top */
+  }
+}
