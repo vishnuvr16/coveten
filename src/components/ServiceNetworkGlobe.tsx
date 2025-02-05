@@ -50,11 +50,11 @@ const ServiceNetworkGlobe: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center justify-center p-20 text-white">
+    <div className="w-full flex flex-col items-center justify-center p-20 text-white  bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         <motion.h2 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600"
+            className="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600"
         >
             Our Service Network
         </motion.h2>

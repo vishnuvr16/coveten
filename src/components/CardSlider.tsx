@@ -74,9 +74,6 @@ const CardSlider: React.FC<{
 
   return (
     <div className="relative w-full max-w-6xl mx-auto px-4 py-8">
-      <h2 className="text-2xl font-semibold text-center text-white mb-4">
-        Our Services
-      </h2>
       <Carousel
         responsive={responsive}
         infinite={true}

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-// TypeScript interfaces
+
 interface Product {
   id: string;
   title: string;
@@ -26,7 +26,6 @@ interface ProductAd {
   buttonLink: string;
 }
 
-// Mock data
 const MOCK_PRODUCTS: Product[] = [
   {
     id: '1',
@@ -156,7 +155,7 @@ const ProductCategoryPage: React.FC = () => {
   }, []);
 
   const AdsSlider: React.FC = () => (
-    <div className="relative w-full h-96 overflow-hidden rounded-xl my-16">
+    <div className="relative w-full h-96 overflow-hidden rounded-xl my-16 shadow-2xl">
       <div className="absolute top-4 right-4 z-10 flex gap-2">
         {MOCK_ADS.map((_, index) => (
           <button
@@ -195,7 +194,7 @@ const ProductCategoryPage: React.FC = () => {
   );
 
   const ProductCard: React.FC<{ product: Product }> = ({ product }) => (
-    <div className="bg-gray-400 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+    <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
       <div className="relative h-48">
         <Image
           src={product.image}
@@ -210,7 +209,7 @@ const ProductCategoryPage: React.FC = () => {
           </div>
         )}
       </div>
-      <div className="p-4">
+      <div className="p-6">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-lg font-bold text-gray-800">{product.title}</h3>
           <span className="text-xl font-bold text-blue-600">${product.price}</span>
@@ -242,8 +241,8 @@ const ProductCategoryPage: React.FC = () => {
                   : 'bg-gray-300 cursor-not-allowed text-gray-500'
               }`}
             >
-            View
-          </button>
+              View
+            </button>
           </Link>
         </div>
       </div>
@@ -251,9 +250,9 @@ const ProductCategoryPage: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Hero Banner */}
-      <div className="relative h-96 overflow-hidden">
+      <div className="relative h-96 overflow-hidden rounded-xl shadow-2xl">
         {MOCK_ADS.map((ad, index) => (
           <div
             key={ad.id}
@@ -324,7 +323,7 @@ const ProductCategoryPage: React.FC = () => {
 
         {/* Popular Products Section */}
         <div className="my-16">
-          <h2 className="text-3xl font-bold text-gray-500 mb-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
             Popular Products
             <div className="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
           </h2>
@@ -336,7 +335,7 @@ const ProductCategoryPage: React.FC = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-16 bg-white rounded-xl shadow-lg p-8">
+        <div className="mt-16 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl shadow-lg p-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="flex flex-col items-center">
               <span className="text-3xl font-bold text-blue-600">2,500+</span>

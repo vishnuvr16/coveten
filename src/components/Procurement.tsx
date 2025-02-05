@@ -68,14 +68,14 @@ const Procurement: React.FC = () => {
   const [selectedStep, setSelectedStep] = useState<ProcurementStep>(procurementSteps[0]);
 
   return (
-    <div className="bg-gray-900 text-white py-16 px-4 w-full overflow-hidden">
+    <div className=" bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white py-16 px-4 w-full overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
+          <h2 className="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
             Our Portfolio
           </h2>
         </motion.div>

@@ -41,7 +41,7 @@ const CertificationCard: React.FC<{ certification: Certification; index: number 
       initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300"
+      className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
     >
       <div className="flex items-center gap-4">
         <div className="text-4xl text-lightseagreen">{certification.icon}</div>
@@ -65,7 +65,7 @@ const Certifications: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section className="py-20 px-4 bg-gradient-to-br from-blue-100 to-purple-100">
       <div className="container mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -99,7 +99,7 @@ const AwardCard: React.FC<{ award: Award }> = ({ award }) => {
       animate={inView ? { opacity: 1, scale: 1 } : {}}
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
-      className="bg-white rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300"
+      className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300"
     >
       <div className="relative w-full h-40 mb-4">
         <Image
@@ -125,13 +125,13 @@ const Awards: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-4 ">
+    <section className="py-20 px-4 bg-gradient-to-br from-blue-100 to-purple-100">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center text-white mb-16"
+          className="text-4xl font-bold text-center text-lightseagreen mb-16"
         >
           Awards & Recognition
         </motion.h2>
@@ -156,7 +156,7 @@ const NewsCard: React.FC<{ news: NewsItem; index: number }> = ({ news, index }) 
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+      className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
     >
       <div className="p-6">
         <div className="flex items-center justify-between mb-4">
@@ -209,7 +209,7 @@ const NewsComponent: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section className="py-20 px-4 bg-gradient-to-br from-blue-100 to-purple-100">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -269,7 +269,7 @@ const Main: React.FC = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
-        className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+        className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
       >
         <div className="text-4xl mb-4">{solution.icon}</div>
         <h3 className="text-xl font-bold text-lightseagreen mb-2">{solution.name}</h3>
@@ -279,7 +279,7 @@ const Main: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen mt-10">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Your existing hero section code here */}
       <motion.section 
         style={{ opacity }}
@@ -313,7 +313,7 @@ const Main: React.FC = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-6xl font-bold text-lightseagreen mb-6"
+              className="text-4xl md:text-6xl font-bold text-gray-400 mb-6"
             >
               The Coveten's Network
             </motion.h1>
@@ -331,7 +331,7 @@ const Main: React.FC = () => {
       </motion.section>
 
       {/* Solutions Grid */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-br from-blue-100 to-purple-100">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-lightseagreen mb-16">
           Our IOT 4.0 Solutions
         </h2>
@@ -343,7 +343,7 @@ const Main: React.FC = () => {
       </section>
 
       {/* Manufacturing Solutions */}
-      <section className="bg-lightseagreen text-white py-20 px-4">
+      <section className="bg-gradient-to-br from-blue-500 to-purple-600 text-white py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
             Manufacturing Solutions

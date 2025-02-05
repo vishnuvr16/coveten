@@ -108,7 +108,7 @@ export default async function Home() {
         <div className="w-full " style={styles.serviceSection}>
           <ServicesComponent />
         </div>
-        <div className="w-full p-20 overflow-hidden flex items-center flex-col" style={styles.serviceNetworkSection}>
+        <div className="w-full flex items-center flex-col" style={styles.serviceNetworkSection}>
             <ServiceNetworkGlobe />
         </div>
 
