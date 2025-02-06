@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FaComment } from "react-icons/fa"
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay, Grid } from 'swiper/modules';
 import AnimatedButton from '../AnimatedButton';
-import { LuArrowRight, LuArrowRightCircle } from 'react-icons/lu';
+import { LuArrowRight } from 'react-icons/lu';
 import ProductSkeleton from './ProductSkeleton';
 import { Suspense } from 'react';
 
