@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay, Grid, EffectCreative } from 'swiper/modules';
 import Link from 'next/link';
 import HeroCard from './HeroCard';
-import SearchInput from './SearchInput';
 import Imagehero from '../../../public/assets/- Service providers/More Opportunities.jpg'
 import Image from 'next/image';
 
