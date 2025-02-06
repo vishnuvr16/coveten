@@ -10,7 +10,6 @@ import Sidebar from '@/src/components/vendor/sidebar';
 import Portals from '@/src/components/portals';
 import { IRootState } from '@/src/store';
 import { useSelector } from 'react-redux';
-import SidebarToggle from '@/src/components/vendor/sidebarToggle';
 
 export default function DefaultLayout({ children }: { children: React.ReactNode }) {
     const primaryColor = useSelector((state: IRootState)=> state.themeConfig.primaryColor);
