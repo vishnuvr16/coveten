@@ -2,7 +2,7 @@
 import React from 'react';
 import { Tab } from '@headlessui/react';
 import NewModules from './NewModules';
-import AcceptedModules from './AcceptedModules';
+import AcceptedModules from '../AcceptedModules';
 import CompletedModules from './CompletedModules';
 import RejectedModules from './RejectedModules';
 

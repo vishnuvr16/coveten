@@ -5,46 +5,66 @@ import { Dialog, DialogBackdrop, Transition, TransitionChild } from '@headlessui
 import { useGqlClient } from '@/hooks/UseGqlClient';
 import { useMutation } from 'graphql-hooks';
 import { toast } from 'react-hot-toast';
+import HandleFileUpload from '@/shared/HandleFileUpload';
+import createLog from '@/shared/graphQl/mutations/createLog';
+import AuthConfig from '@/firebase/oauth.config';
+import { Toaster } from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 //props interface
-interface IComplainModal {
-    isRejectModalOpen: boolean;
-    setIsRejectModalOpen: (value: boolean) => void;
-    updateModule: (status: string, moduleId: string, message: string) => void;
-    currentModuleId: string;
+interface INotificationModal {
+    isOpen: boolean;
+    setIsOpen: (value: boolean) => void;
 }
 
 
-//component
-function RejectModal({ isRejectModalOpen, setIsRejectModalOpen, updateModule, currentModuleId }: IComplainModal) {
 
+//component
+function ForgotPassModal({ isOpen, setIsOpen }: INotificationModal) {
+    // state
+    const [loading, setLoading] = useState(false);
+
+    // hooks
+    const { resetPassword } = AuthConfig()
+    const router = useRouter()
 
     //handle close modal
     function closeModal() {
-        setIsRejectModalOpen(false);
+        setIsOpen(false);
     }
 
     //handle open modal
     function openModal() {
-        setIsRejectModalOpen(true);
+        setIsOpen(true);
     }
 
-    const handleSubmit = async (e: any) => {
-        e.preventDefault()
-        const description = e.target.description.value
-        if (description.length) {
-            updateModule("REJECTED", currentModuleId, description)
-        }
+
+    //creating notification
+    async function handleSubmit(event: any) {
+        setLoading(true)
+        event.preventDefault();
+        const email = event.target.email.value;
+
+        resetPassword(email).then(() => {
+            router.push('/auth/reset_password?success=true')
+            closeModal();
+            setLoading(false)
+        }).catch((error) => {
+            router.push(`/auth/reset_password?success=false&message=${error.message}`)
+            setLoading(false)
+        });
+
     }
+
+
+
 
 
 
     //render
     return (
         <div>
-
-
-            <Transition show={isRejectModalOpen} as={Fragment}>
+            <Transition show={isOpen} as={Fragment}>
                 <Dialog
                     as="div"
                     className="fixed z-[120000000000] inset-0 overflow-y-auto"
@@ -81,31 +101,29 @@ function RejectModal({ isRejectModalOpen, setIsRejectModalOpen, updateModule, cu
                         >
 
                             <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-                                <p className="focus:outline-none pt-4 pb-8 text-base text-center sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Comment</p>
+                                <p className="focus:outline-none pt-4 pb-8 text-base text-center sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">Forgot Password</p>
                                 <form onSubmit={handleSubmit} className=''>
-
-
                                     <div className="mb-5">
-                                        <label htmlFor="description" className="block  text-gray-700 text-sm mb-1">
-                                            Description
+                                        <label htmlFor="title" className="block  text-gray-700 text-sm mb-1">
+                                            Enter Your Email
                                         </label>
-                                        <textarea
-                                            id="description"
-                                            name="description"
-                                            required
+                                        <input
+                                            id="title"
+                                            name="email"
+                                            type="email"
                                             className="mt-1 px-4 py-2 border border-gray-200 rounded-md w-full"
-                                            rows={3}
                                         />
                                     </div>
+
 
 
 
                                     <div className="mt-10">
                                         <button
                                             type="submit"
-                                            className="px-4 py-2 bg-primary text-white  "
+                                            className="px-4 py-2 bg-primary text-white rounded-md hover:bg-blue-600"
                                         >
-                                            Submit
+                                            {loading ? 'Loading...' : 'Send Email'}
                                         </button>
                                         <button
                                             type="button"
@@ -121,8 +139,15 @@ function RejectModal({ isRejectModalOpen, setIsRejectModalOpen, updateModule, cu
                     </div>
                 </Dialog>
             </Transition>
+            <Toaster
+                position="bottom-right"
+                containerStyle={{}}
+                toastOptions={{
+                    duration: 7000,
+                }}
+            />
         </div>
     );
 }
 
-export default RejectModal;
+export default ForgotPassModal;
