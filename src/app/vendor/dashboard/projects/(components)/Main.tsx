@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Tabs from './Tabs';
-import ModuleTabs from '../AcceptedModules';
+import ModuleTabs from './AcceptedModules';
 
 
 
