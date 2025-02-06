@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchInput from './SearchInput';
 
 interface HeroProps {
     text: string
@@ -38,7 +37,7 @@ const HeroCard = ({ text, image }: HeroProps) => {
                     <h1 className="text-white text-center text-2xl font-bold sm:text-4xl md:text-5xl lg:leading-normal ">
                         {text}
                     </h1>
-                    <SearchInput />
+                    {/* <SearchInput /> */}
                 </div>
 
             </div>
